@@ -10,19 +10,6 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 minecraft {
     mappings channel: 'official', version: '1.16.5'
-    
-    runs {
-        client {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'DEBUG'
-            mods {
-                itemphysic {
-                    source sourceSets.main
-                }
-            }
-        }
-    }
 }
 
 dependencies {
@@ -32,12 +19,11 @@ dependencies {
 jar {
     manifest {
         attributes([
-            'Specification-Title'     : 'itemphysic',
-            'Specification-Vendor'    : 'CreativeMD',
-            'Specification-Version'   : '1',
-            'Implementation-Title'    : project.name,
-            'Implementation-Version'  : project.version,
-            'Implementation-Vendor'   : 'CreativeMD',
+            'Specification-Title': 'itemphysic',
+            'Specification-Vendor': 'CreativeMD',
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.version,
+            'Implementation-Vendor': 'CreativeMD',
         ])
     }
 }
